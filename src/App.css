@@ -302,6 +302,32 @@ button {
   overflow: hidden;
 }
 
+/* Light Mode Styles */
+html:not(.dark) {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #1a202c;
+      }
+
+      html:not(.dark) .header {
+          background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+              border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+              }
+
+              html:not(.dark) .glass {
+                  background: rgba(255, 255, 255, 0.25);
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    }
+
+                    html:not(.dark) button {
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                          color: white;
+                          }
+
+                          html:not(.dark) button:hover {
+                              background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+                              }
+
 button::before {
   content: '';
   position: absolute;
