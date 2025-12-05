@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa';
 
-const Header = () => {
+const Header = ({ isDark, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -13,8 +12,8 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode);
-  }, [darkMode]);
+    document.documentElement.classList.toggle('dark', isDark);
+  }, [isDark]);
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -37,10 +36,10 @@ const Header = () => {
           ))}
         </ul>
         <div className="nav-actions">
-          <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
-            {darkMode ? <FaSun /> : <FaMoon />}
+          <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle theme">
+            {isDark ? <FaSun /> : <FaMoon />}
           </button>
-          <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
+          <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>

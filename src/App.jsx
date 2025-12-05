@@ -19,10 +19,7 @@ function App() {
 
   return (
     <div className={`app ${isDark ? 'dark' : 'light'}`}>
-      <button className="theme-toggle" onClick={toggleTheme} title="Toggle dark mode">
-        {isDark ? '☀️' : '🌙'}
-      </button>
-      <Header />
+      <Header isDark={isDark} toggleTheme={toggleTheme} />
       <Hero />
       <About />
       <Skills />
