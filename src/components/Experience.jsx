@@ -1,43 +1,44 @@
-import { FaBriefcase, FaCalendar, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaCalendar, FaMapMarkerAlt } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolioData';
 
 const Experience = () => {
   const { experience } = portfolioData;
 
   return (
-    <section id="experience" className="experience">
-      <div className="container">
-        <h2 className="section-title">Work Experience</h2>
-        <div className="timeline">
-          {experience.map((exp, index) => (
-            <div key={index} className="timeline-item">
-              <div className="timeline-marker"></div>
-              <div className="timeline-content">
-                <div className="exp-header">
-                  <div>
-                    <h3>{exp.position}</h3>
-                    <h4>{exp.company}</h4>
-                  </div>
-                  <div className="exp-meta">
-                    <span><FaCalendar /> {exp.duration}</span>
-                    <span><FaMapMarkerAlt /> {exp.location}</span>
-                  </div>
-                </div>
-                <p className="exp-description">{exp.description}</p>
-                <ul className="achievements">
-                  {exp.achievements.map((achievement, i) => (
-                    <li key={i}>{achievement}</li>
-                  ))}
-                </ul>
-                <div className="technologies">
-                  {exp.technologies.map((tech, i) => (
-                    <span key={i} className="tech-tag">{tech}</span>
-                  ))}
-                </div>
+    <section id="experience" className="section experience">
+      <h2 className="section-title">Work Experience</h2>
+      <div className="experience-timeline">
+        {experience.map((exp, index) => (
+          <div key={index} className="experience-item glass-card">
+            <div className="experience-header">
+              <div className="experience-title-info">
+                <h3 className="experience-title">{exp.position}</h3>
+                <h4 className="experience-company">{exp.company}</h4>
+              </div>
+              <div className="experience-meta">
+                <span className="experience-period">
+                  <FaCalendar style={{ marginRight: '6px', fontSize: '12px' }} />
+                  {exp.duration}
+                </span>
+                <span className="experience-location">
+                  <FaMapMarkerAlt style={{ marginRight: '6px', fontSize: '12px' }} />
+                  {exp.location}
+                </span>
               </div>
             </div>
-          ))}
-        </div>
+            <p className="experience-desc">{exp.description}</p>
+            <ul className="experience-highlights">
+              {exp.achievements.map((achievement, i) => (
+                <li key={i} className="experience-highlight">{achievement}</li>
+              ))}
+            </ul>
+            <div className="experience-tech">
+              {exp.technologies.map((tech, i) => (
+                <span key={i} className="experience-tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
