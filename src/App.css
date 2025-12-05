@@ -910,3 +910,73 @@ footer {
                                                                                               display: block;
                                                                                                 margin-bottom: 8px;
                                                                                                 }
+
+                                                                                                /* Navbar Actions (Theme Toggle & Burger Menu) */
+                                                                                                .nav-actions {
+                                                                                                    display: flex;
+                                                                                                      align-items: center;
+                                                                                                        gap: 15px;
+                                                                                                        }
+
+                                                                                                        .theme-toggle {
+                                                                                                            background: rgba(255, 255, 255, 0.1);
+                                                                                                              border: 1px solid rgba(255, 255, 255, 0.2);
+                                                                                                                color: #fff;
+                                                                                                                  padding: 10px 12px;
+                                                                                                                    border-radius: 8px;
+                                                                                                                      cursor: pointer;
+                                                                                                                        display: flex;
+                                                                                                                          align-items: center;
+                                                                                                                            justify-content: center;
+                                                                                                                              font-size: 1.2rem;
+                                                                                                                                transition: all 0.3s ease;
+                                                                                                                                }
+
+                                                                                                                                .theme-toggle:hover {
+                                                                                                                                    background: rgba(255, 255, 255, 0.2);
+                                                                                                                                      transform: scale(1.05);
+                                                                                                                                      }
+
+                                                                                                                                      /* Hide burger menu on desktop */
+                                                                                                                                      .mobile-menu-btn {
+                                                                                                                                          display: none;
+                                                                                                                                          }
+
+                                                                                                                                          /* Show burger menu on mobile (screens smaller than 768px) */
+                                                                                                                                          @media (max-width: 768px) {
+                                                                                                                                              .mobile-menu-btn {
+                                                                                                                                                    display: flex;
+                                                                                                                                                        background: rgba(255, 255, 255, 0.1);
+                                                                                                                                                            border: 1px solid rgba(255, 255, 255, 0.2);
+                                                                                                                                                                color: #fff;
+                                                                                                                                                                    padding: 10px 12px;
+                                                                                                                                                                        border-radius: 8px;
+                                                                                                                                                                            cursor: pointer;
+                                                                                                                                                                                align-items: center;
+                                                                                                                                                                                    justify-content: center;
+                                                                                                                                                                                        font-size: 1.2rem;
+                                                                                                                                                                                            transition: all 0.3s ease;
+                                                                                                                                                                                              }
+
+                                                                                                                                                                                                .mobile-menu-btn:hover {
+                                                                                                                                                                                                      background: rgba(255, 255, 255, 0.2);
+                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                          /* Hide nav links on mobile, show when active */
+                                                                                                                                                                                                            .nav-links {
+                                                                                                                                                                                                                  display: none;
+                                                                                                                                                                                                                      flex-direction: column;
+                                                                                                                                                                                                                          position: absolute;
+                                                                                                                                                                                                                              top: 100%;
+                                                                                                                                                                                                                                  left: 0;
+                                                                                                                                                                                                                                      right: 0;
+                                                                                                                                                                                                                                          background: rgba(10, 15, 30, 0.98);
+                                                                                                                                                                                                                                              backdrop-filter: blur(10px);
+                                                                                                                                                                                                                                                  padding: 20px;
+                                                                                                                                                                                                                                                      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                          .nav-links.active {
+                                                                                                                                                                                                                                                                display: flex;
+                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                  }
